@@ -1,0 +1,11 @@
+# Parâmetros do job. Envie com: sauron submit -c job.yaml script.sh
+# Os comandos do job ficam no script.sh, não aqui.
+name: download-synthgen
+image: pytorch/pytorch:2.13.0-cuda13.0-cudnn9-devel
+gpus: 1
+vram: 4
+memory: 8g
+max_time: 4h
+
+# workspace: subpasta de ~/workspace com o seu código; o job já começa dentro dela
+workspace: sauron
