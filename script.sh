@@ -5,7 +5,9 @@
 set -e
 
 # segredos ficam num .env na pasta do projeto, nunca no job.yaml
+set -a   # exporta as variáveis do .env para o python enxergar
 source .env 2>/dev/null || true
+set +a
 
 # dependências num venv na pasta do projeto, sobre os pacotes da imagem
 export PYTHONNOUSERSITE=1
